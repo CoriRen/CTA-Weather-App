@@ -58,7 +58,8 @@ body{
   font: 400 16px/1.5 'Roboto', sans-serif;
 }
 h1,h2,h3,h4,h5 {
-  font-weight: 400 
+  font-weight: 400; 
+  line-height: 1.2;
 }
 h1 {
     font-size: 60px;
@@ -139,25 +140,29 @@ Layout
   width: 90%;
   margin: 0 auto;
 }
-
-
+section {
+ margin: 0 0 8% 0;
+}
+/* Header*/
 header{
   background-color: white;
   top: 0;
   z-index: 15;
+  border-bottom: 1px solid #f6f6f6;
 }
 .headerContainer{
   display: flex;
   justify-content: space-between;
-  padding: 25px 0;
+  align-items: center;
+  padding: 10px 0;
 }
 .headerMenu{
   display: flex;
   justify-content: flex-start;
   align-items:center;
 }
-.headerlinks{
-  padding-right: 10px;
+.paddingRight{
+  padding-right: 30px;
 
 }
 .headerSocials{
@@ -182,10 +187,61 @@ header{
   to {transform: rotateY(360deg);}
 }
 
+/* Product Grid*/
+.productGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 2%;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 4%;
+  padding: 20px 0;
+  height: fit-content;
+}
+
+.product{
+  min-height: 600px;
+  background:#e1dbdb;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product:hover{
+  box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.5);
+}
+
+/* Two Column Grid*/
+  
+.twoColGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2%;
+}
+.imgBoxLeft{
+ grid-column-start: 1; 
+ min-height: 500px;
+ background: #e1dbdb;
+}
+.imgBoxRight{
+  grid-column-start: 2; 
+  min-height: 800px;
+  background: #e1dbdb;
+  box-shadow: -30px 40px #9F78FF, 10px 40px #9F78FF;
+ }
+.contentBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15%;
+  
+}
+
+
+
 footer{
   background: #1c2546;
   color: #C2C5DB;
-  padding: 5%;
+  padding: 3%;
 }
 .footerContainer{
   display: flex;
@@ -220,59 +276,78 @@ Modules
 .slider{
   min-height: 900px;
   /*background-color: #e1dbdb;*/
-  background: no-repeat url(assets/LANA-LIGHT-BLUE-BUTTON-HAT-LIFESTYLE-SHOT_e1342c47-dfcc-452f-9ddd-f19e9cf8c121_5000x.jpg);
-  background-size: cover;
+  background: linear-gradient(to right, rgba(144, 151, 204,1) 60%, rgba(144, 151, 204, .1)), url(assets/LANA-LIGHT-BLUE-BUTTON-HAT-LIFESTYLE-SHOT_e1342c47-dfcc-452f-9ddd-f19e9cf8c121_5000x.jpg) no-repeat;
+  background-size: cover ;
+  background-position: right;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .textColumn{
- text-align: center;
- width: 50%;
  height: fit-content;
+ text-align: center;
+ padding: 5% 0 0 0 ;
 }
 
 
-/* Product Grid*/
-.productGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 2%;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 4%;
-  padding: 20px 0;
-  height: fit-content;
-
-}
-
-.product{
-  min-height: 250px;
-  background:#e1dbdb;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Two Column Grid*/
-  
-.twoColGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2%;
-  margin: 40px 0px;
-}
-.imgBox{
- grid-column-start: 1; 
- min-height: 250px;
- background: #e1dbdb;
-}
 
 /*****************************************************************
-Images
+Backgrounds
 ******************************************************************/
-.slider{
- 
- 
- 
+#homePageHero{
+  background: url(assets/LANA-LIGHT-BLUE-BUTTON-HAT-LIFESTYLE-SHOT_e1342c47-dfcc-452f-9ddd-f19e9cf8c121_5000x.jpg) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product1{
+  background: url(assets/LORETTA-WHITE-PERCHER-HAT-EDITED_5000x.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product2{
+  background: url(assets/NOVAK-BLACK-VEILED-BOATER-LIFESTYLE-SHOT-1_6b66dabc-0054-4dd3-867b-bd48b9c6c321_5000x.webp) no-repeat;
+  background-size: cover ;
+  background-position: left;
+}
+#product3{
+  background: url(assets/derbyhat_3.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product4{
+  background: url(assets/derbyhat_4.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product5{
+  background: url(assets/derbyhat_small_2.jpg) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product6{
+  background: url(assets/ROSE-BUD-YELLOW-LEATHER-PERCHER-HAT-1_5000x.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product7{
+  background: url(assets/VICTORIA-BERET-BLACK-EDITED_5000x.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+#product8{
+  background: url(assets/PHILLIMORE-HEADBAND-LIFESTYLE-SHOT-2_453f5c93-9398-4819-9f45-959be997e7d6_5000x.webp) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+
+#aboutUs{
+  background: url(assets/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg) no-repeat;
+  background-size: cover ;
+  background-position: top;
+}
+.brown{
+  background-color: #FDECEF;
+}
+.gray{
+  background-color: #c5d6ea;
 }
