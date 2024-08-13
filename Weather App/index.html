@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Chicago Weather</title>
+
+		<!-- external CSS link -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="sunny innerContainer">
+			<section class="flexBox">
+				<h4><span class="currentTemp"></span>°</h4> 
+				<p class="shortForecast">Partly Cloudy</p>
+				<img src="assets/layered-waves-haikei.svg" alt="" class="waves">
+			</section>
+		</div>
+		<section class="innerContainer">
+			<div class="textContent">
+				<h1 class="city">Chicago</h1>
+			<div class="border"></div>
+			<h2><span class="currentDate">4:00pm</span></h2>
+			<p><span class="currentTime">August 12th</span></p>
+			<div class="grid">
+				<p class="rightBorder smallText">Chance of Rain<br><span class="thin" id="chanceOfRain">0</span><span class="thin">%</span></p>
+				<p class="smallText">Humidity<br><span class="thin" id="humidity">40</span><span class="thin">%</span></p>
+				</div>
+				<p class="detailedForecast">Here is the long version of the daily forecast</p>
+			</div>
+		</section>
+		<section class="innerContainer">
+			<div class="textContent">
+				<p class="smallText">Next Pink Line Train</p>
+				<p class="thin">Next Pink Line Train</p>
+				<a class="button" href="#">Refresh</a>
+			</div>
+			
+		</section>
+		
+		<script type="text/javascript" src="main-accuweather.js"></script>
+	</body>
+</html>
