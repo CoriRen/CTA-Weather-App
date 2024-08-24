@@ -85,7 +85,7 @@ h4{
 }
 
 h2{
-  padding-top: 3%;
+  padding-top: 1%;
   font-size: 3rem;
   font-weight: 300;
   line-height: 1.5;
@@ -103,18 +103,32 @@ p, .thin{
 
 }
 .shortForecast{
-  padding: 0 0 5% 0;
+  padding: 0 0 1% 0;
 }
 .detailedForecast{
   padding: 4% 0;
 }
+.dateTime{
+  display: inline-block;
+  padding-right: 2%;
+}
+.news{
+  font-size: 1.2rem;
+  font-weight: 300;
+  color:#4a4b4f;
+  line-height: 1.4;
+}
 .button{
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid #f8a000;
   border-radius: 25px;
   padding: 2% 5%;
   margin: 2% 0;
+  text-decoration: none;
+  background-color: #f8a000;
+  color: white;
 }
+
 
 /******************************************
 /* LAYOUT
@@ -128,11 +142,11 @@ p, .thin{
 .flexBox{
   display: flex;
   flex-direction: column;
-  padding: 10% 5% 0 5%;
+  padding: 5% 5% 0 5%;
 }
 
 .textContent{
-  padding: 0 30% 0 5%;
+  padding: 0 5% 0 5%;
 
 }
 .border{

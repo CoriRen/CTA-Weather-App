@@ -1,15 +1,17 @@
 // Define a class to handle fetching weather and time data
 class WeatherFetcher {
-  constructor(hourlyForecastUrl, forecastUrl, timeUrl) {
+  constructor(hourlyForecastUrl, forecastUrl, timeUrl, newsUrl) {
     this.hourlyForecastUrl = hourlyForecastUrl;
     this.forecastUrl = forecastUrl;
     this.timeUrl = timeUrl;
+    this.newsUrl = newsUrl;
   }
 
   fetchWeatherData() {
     this.fetchHourlyForecast();
     this.fetchForecast();
     this.fetchTime();
+    this.fetchNews();
   }
 
   fetchHourlyForecast() {
@@ -42,11 +44,30 @@ class WeatherFetcher {
   }
 
   fetchTime() {
+
     fetch(this.timeUrl)
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        let currentDate = new Date(data.datetime).toLocaleDateString();
+        document.querySelector('#currentDate').innerText = currentDate
+        let currentTime = new Date(data.datetime).toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+        document.querySelector('#currentTime').innerText = currentTime
       
+      })
+      .catch(err => {
+        console.log(`error ${err}`);
+      });
+  }
+  fetchNews() {
+
+    fetch(this.newsUrl)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        document.querySelector('#news').innerText = data.data[0].title
+        document.querySelector('#newsLink').href = data.data[0].url
+              
       })
       .catch(err => {
         console.log(`error ${err}`);
@@ -58,7 +79,8 @@ class WeatherFetcher {
 const weatherFetcher = new WeatherFetcher(
   'https://api.weather.gov/gridpoints/LOT/75,72/forecast/hourly',
   'https://api.weather.gov/gridpoints/LOT/75,72/forecast',
-  'https://timeapi.io/api/Time/current/zone?timeZone=America/Chicago'
+  'http://worldtimeapi.org/api/timezone/America/Chicago',
+  'https://api.thenewsapi.com/v1/news/top?api_token=rl6kvZrVeyykAdeUYEcwR4RPa00bTCIXJWXeWEFC&locale=us&limit=3'
 );
 
 // Set up event listener on the button
