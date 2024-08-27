@@ -22,14 +22,26 @@ class WeatherFetcher {
         const shortForecast = data.properties.periods[0].shortForecast.toLowerCase();
         document.querySelector('.currentTemp').innerText = data.properties.periods[0].temperature;
         document.querySelector('.shortForecast').innerText = shortForecast
-        if (shortForecast === 'sunny' || shortForecast === 'mostly sunny'){
-          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/sunny.png')"
-        }else if (shortForecast === 'showers' || shortForecast === 'freezing rain'){
-          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/rain-clouds.png')"
+        if (shortForecast === 'sunny' || shortForecast === 'partly sunny' || shortForecast === 'partly cloudy' || shortForecast === 'mostly sunny'){
+          document.querySelector('.sunny').style.visibility = 'visible';
+          document.querySelector('.cloudy').style.visibility = 'hidden';
+          document.querySelector('.rain').style.visibility = 'hidden';
+          document.querySelector('.snow').style.visibility = 'hidden';
+        }else if (shortForecast === 'showers'){
+          document.querySelector('.rain').style.visibility = 'visible'
+          document.querySelector('.cloudy').style.visibility = 'hidden';
+          document.querySelector('.sunny').style.visibility = 'hidden';
+          document.querySelector('.snow').style.visibility = 'hidden';
         }else if (shortForecast === 'snow'){
-          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/snowfall.gif')"
+          document.querySelector('.snow').style.visibility = 'visible';
+          document.querySelector('.cloudy').style.visibility = 'hidden';
+          document.querySelector('.rain').style.visibility = 'hidden';
+          document.querySelector('.sunny').style.visibility = 'hidden';
         }else {
-          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/partly-sunny.png')"
+          document.querySelector('.cloudy').style.visibility = 'visible';
+          document.querySelector('.sunny').style.visibility = 'hidden';
+          document.querySelector('.rain').style.visibility = 'hidden';
+          document.querySelector('.snow').style.visibility = 'hidden';
         }
       })
       .catch(err => {

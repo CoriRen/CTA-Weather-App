@@ -76,8 +76,9 @@ font: 400 16px 'Roboto', sans-serif;
 }
 h1{
   font: 300 5rem 'Roboto', sans-serif;
-
 }
+
+
 h4{
   font-size: 2rem;
   font-weight: 500;
@@ -102,14 +103,11 @@ p, .thin{
   line-height: 1.4;
 
 }
-.shortForecast{
-  padding: 0 0 1% 0;
-}
+
 .detailedForecast{
   padding: 4% 0;
 }
 .dateTime{
-  display: inline-block;
   padding-right: 2%;
 }
 .news{
@@ -138,34 +136,59 @@ p, .thin{
   width: 480px;
   margin: 0 auto;
 }
+/*Main weather box*/
 
-.flexBox{
-  display: flex;
-  flex-direction: column;
+.gridBox{
+  display: grid;
+  height: 300px;
+  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
   padding: 5% 5% 0 5%;
 }
+.shortForecast{
+  padding: 0 0 1% 0;
+  margin-top:-15px;
+  text-transform: capitalize;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+.highRainBox{
+  display: flex;
+  justify-content: flex-start;
+  grid-column: 1 /span 1;
+  grid-row: 3 /span 1;
+  padding: 8% 0;
+}
 
+.rightBorder{
+  border-right: 1px solid #b1b1b1;
+  padding: 0 10% 0 0;
+}
+
+.leftBorder{
+  padding-left: 10%;
+}
+
+.weatherIcon{
+  background: url(#) no-repeat right top;
+  background-size: 300px;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+/*detailed city, time, and weather info*/
 .textContent{
   padding: 0 5% 0 5%;
-
 }
+
 .border{
   width: 20%;
   border-bottom: 2px solid #b1b1b1;
   padding: 2% 0;
 }
-.grid{
-  display: flex;
-  justify-content: flex-start;
-  padding: 8% 0;
-}
-.rightBorder{
-  border-right: 1px solid #b1b1b1;
-  padding: 0 5% 0 0;
-}
-.leftBorder{
-  padding-left: 5%;
-}
+
+
+
 #details{
   padding-bottom: 19%;
 }
@@ -176,20 +199,30 @@ p, .thin{
 
 
 /******************************************
-/* ADDITIONAL STYLES
+/* Backgrounds
 /*******************************************/
-.sunny{
-  background: url(Assets/Clouds.png) no-repeat right top, linear-gradient(#bee4fa, #b3d6fc);
-  background-size: 300px;
+
+.weatherBackground{
+  background: linear-gradient(#bee4fa, #b3d6fc);
   
 }
+/*.rain{
+  background: url(assets/rain-clouds.png) no-repeat right top, linear-gradient(#c5dff6, #c5dff6);
+  background-size: 300px;
+  visibility: hidden;
+  
+}
+.snow{
+  background: url(assets/snowfall.gif) no-repeat right top, linear-gradient(#c5dff6, #c5dff6);
+  background-size: 300px;
+  visibility: hidden;
+  
+}*/
 .waves{
   position: relative;
   width: 480px;
-  bottom: -5px;
+  bottom: -6px;
   left:0px;
 }
 
 
-
-/*media query width 480 X 800*/
