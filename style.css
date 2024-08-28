@@ -181,6 +181,9 @@ p, .thin{
   padding: 0 5% 0 5%;
 }
 
+.city{
+  padding-top: 3%;
+}
 .border{
   width: 20%;
   border-bottom: 2px solid #b1b1b1;
@@ -221,7 +224,7 @@ p, .thin{
 .waves{
   position: relative;
   width: 100%;
-  bottom: -6px;
+  bottom: -10px;
   left:0px;
 }
 
