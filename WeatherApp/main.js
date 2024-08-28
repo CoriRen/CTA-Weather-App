@@ -24,12 +24,12 @@ class WeatherFetcher {
         document.querySelector('.shortForecast').innerText = shortForecast
         if (shortForecast === 'sunny' || shortForecast === 'mostly sunny'){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/sunny.png')"
-        }else if (shortForecast === 'showers' || shortForecast === 'freezing rain'){
+        }else if (String(shortForecast).includes('showers') ){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/rain-clouds.png')"
-        }else if (shortForecast === 'snow'){
+        }else if (String(shortForecast).includes('snow') ){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/snowfall.gif')"
         }else {
-          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/partly-sunny.png')"
+          document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/Clouds.png')"
         }
       })
       .catch(err => {
@@ -62,6 +62,9 @@ class WeatherFetcher {
         document.querySelector('#currentDate').innerText = currentDate
         let currentTime = new Date(data.datetime).toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
         document.querySelector('#currentTime').innerText = currentTime
+        if( String(currentTime).includes('6:') ){
+          document.querySelector('#high').textContent = "Low"
+        }
       
       })
       .catch(err => {
