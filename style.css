@@ -73,31 +73,39 @@ table {
 
 html {
 font: 400 16px 'Roboto', sans-serif;
+color: #1c1c1c;
 }
 h1{
   font: 300 5rem 'Roboto', sans-serif;
 }
-
-
-h4{
-  font-size: 2rem;
+h2{
+  font-size: 2.5rem;
   font-weight: 500;
 
 }
-
-h2{
-  padding-top: 1%;
+h3{
+  padding: 5% 0 5% 0;
   font-size: 3rem;
   font-weight: 300;
-  line-height: 1.5;
+}
+h4{
+  font-size: 2rem;
 }
 p, .thin{
-  font-size: 1.5rem;
   font-weight: 300;
-  color: black;
+}
+p {
+  font-size: 1.5rem;
+}
+.bold{
+  font-weight: 600;
+  padding-bottom: 2%;
+}
+.gray{
+  color: darkgray;
 }
 .smallText{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color:#4a4b4f;
   line-height: 1.4;
@@ -121,7 +129,7 @@ p, .thin{
   border: 1px solid #f8a000;
   border-radius: 25px;
   padding: 2% 5%;
-  margin: 2% 0;
+  margin: 3% 0;
   text-decoration: none;
   background-color: #f8a000;
   color: white;
@@ -133,7 +141,7 @@ p, .thin{
 /*******************************************/
 
 .innerContainer{
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 }
 /*Main weather box*/
@@ -143,7 +151,7 @@ p, .thin{
   height: 300px;
   grid-template-rows: 2fr 1fr 2fr;
   grid-template-columns: 1fr 2fr;
-  padding: 5% 5% 0 5%;
+  padding: 5% 10% 0 10%;
 }
 .shortForecast{
   padding: 0 0 1% 0;
@@ -171,14 +179,15 @@ p, .thin{
 
 .weatherIcon{
   background: url(#) no-repeat right top;
-  background-size: 250px;
+  background-position: center;
+  background-size: contain;
   grid-column: 2;
   grid-row: 1 / span 3;
 }
 
 /*detailed city, time, and weather info*/
 .textContent{
-  padding: 0 5% 0 5%;
+  padding: 0 9% 0 9%;
 }
 
 .city{
@@ -199,7 +208,10 @@ p, .thin{
   padding-bottom: 300px;
 }*/
 
-
+.boxShadow{
+  padding-top: 9%;
+  background: linear-gradient(#fff, #ffcb9a);
+}
 
 /******************************************
 /* Backgrounds
@@ -224,7 +236,7 @@ p, .thin{
 .waves{
   position: relative;
   width: 100%;
-  bottom: -10px;
+  bottom: -12px;
   left:0px;
 }
 

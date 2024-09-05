@@ -53,13 +53,15 @@ class WeatherFetcher {
   }
 
   fetchTime() {
-
     fetch(this.timeUrl)
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        let currentDate = new Date(data.datetime).toLocaleDateString();
-        document.querySelector('#currentDate').innerText = currentDate
+    
+        let currentDate = new Date(data.datetime).toLocaleDateString(navigator.language, {weekday: 'long', month: 'long', day: 'numeric'});
+        
+        document.querySelector('#currentDate').innerText = currentDate;
+
         let currentTime = new Date(data.datetime).toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
         document.querySelector('#currentTime').innerText = currentTime
         if( String(currentTime).includes('6:') ){
@@ -72,7 +74,6 @@ class WeatherFetcher {
       });
   }
   fetchNews() {
-
     fetch(this.newsUrl)
       .then(res => res.json())
       .then(data => {
@@ -99,5 +100,5 @@ const weatherFetcher = new WeatherFetcher(
 // Event listener on the button
 document.querySelector('.button').addEventListener('click', () => weatherFetcher.fetchWeatherData());
 
-// Call the fetchWeatherData method on page load
+// Call fetchWeatherData method on page load
 weatherFetcher.fetchWeatherData();
