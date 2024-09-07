@@ -109,9 +109,10 @@ p {
   font-weight: 500;
   color:#4a4b4f;
   line-height: 1.4;
-
 }
-
+.center{
+  text-align: center;
+}
 .detailedForecast{
   padding: 4% 0;
 }
@@ -185,6 +186,17 @@ p {
   grid-row: 1 / span 3;
 }
 
+.swiContainer{
+  display: flex;
+}
+.smallWeatherIcon{
+  max-width: 100px;
+  position: relative;
+  align-self: center;
+  border
+  
+}
+
 /*detailed city, time, and weather info*/
 .textContent{
   padding: 0 9% 0 9%;
@@ -208,11 +220,20 @@ p {
   padding-bottom: 300px;
 }*/
 
-.boxShadow{
+.orange{
   padding-top: 9%;
   background: linear-gradient(#fff, #ffcb9a);
 }
 
+.hourlyForecastGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border: 1px solid black;
+}
+.col{
+  border: 1px solid black;
+}
 /******************************************
 /* Backgrounds
 /*******************************************/
