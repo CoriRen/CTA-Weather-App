@@ -84,7 +84,7 @@ h2{
 
 }
 h3{
-  padding: 5% 0 5% 0;
+  padding: 3% 0;
   font-size: 3rem;
   font-weight: 300;
 }
@@ -93,6 +93,7 @@ h4{
 }
 p, .thin{
   font-weight: 300;
+  display: block;
 }
 p {
   font-size: 1.5rem;
@@ -109,6 +110,14 @@ p {
   font-weight: 500;
   color:#4a4b4f;
   line-height: 1.4;
+
+}
+.hourlyTemp{
+  padding: 5% 0;
+}
+.precip{
+  padding: 15% 0;
+  font-size: 1rem
 }
 .center{
   text-align: center;
@@ -147,7 +156,7 @@ p {
 }
 /*Main weather box*/
 
-.gridBox{
+.mainGridBox{
   display: grid;
   height: 300px;
   grid-template-rows: 2fr 1fr 2fr;
@@ -186,20 +195,31 @@ p {
   grid-row: 1 / span 3;
 }
 
-.swiContainer{
-  display: flex;
+/*Hourly weather info*/
+
+.textContent{
+  padding: 0 9%;
 }
-.smallWeatherIcon{
+.hourlyForecastGrid{
+  margin: 5% 0;
+  padding: 0 9%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr ;
+}
+/*.col{
+  border: 1px solid black;
+}*/
+
+.smallIconContainer{
+  display: flex;
+  justify-content: center;
+}
+.smallIcon{
   max-width: 100px;
   position: relative;
   align-self: center;
-  border
   
-}
-
-/*detailed city, time, and weather info*/
-.textContent{
-  padding: 0 9% 0 9%;
 }
 
 .city{
@@ -225,15 +245,7 @@ p {
   background: linear-gradient(#fff, #ffcb9a);
 }
 
-.hourlyForecastGrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  border: 1px solid black;
-}
-.col{
-  border: 1px solid black;
-}
+
 /******************************************
 /* Backgrounds
 /*******************************************/

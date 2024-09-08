@@ -16,18 +16,21 @@
 	<body>
 		<div class="weatherBackground innerContainer">
 			<section>
-				<div class="gridBox">
+				<div class="mainGridBox">
 					<h1><span class="currentTemp">80</span>°</h1> 
 					<p class="shortForecast">Partly Cloudy</p>
 					<div class="highRainBox">
-						<p class="rightBorder smallText" id="high">
+						<p class="rightBorder smallText">
 							High<br>
 							<span class="thin">
 								<span id="highTemp">80</span>°
+								</span>
 							</p>
 						<p class="leftBorder smallText">Rain<br>
-							<span class="thin" id="chanceOfRain">40</span>
-							<span class="thin">%</span></p>
+							<span class ='thin'>
+								<span id="chanceOfRain">40</span>%
+							</span>
+						</p>
 					</div>
 					<div class="weatherIcon"></div>
 				</div>
@@ -43,23 +46,43 @@
 			<div class="hourlyForecastGrid">
 				<div class="col">
 					<p class="smallText center" id="hour1">1pm</p>
-					<div class="swiContainer">
-						<img class="smallWeatherIcon"src="assets/sunny.png" alt="">
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
 					</div>
 					<p class="hourlyTemp center">66°</p>
-					
+					<p class="precip center">&#128167 66°</p>
 				</div>
-				<div id="box1">
-					<p class="smallText" id="hour1">1pm</p>
+				<div class="col">
+					<p class="smallText center" id="hour2">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center">66°</p>
+					<p class="precip center">&#128167 66°</p>
 				</div>
-				<div id="box1">
-					<p class="smallText" id="hour1">1pm</p>
+				<div class="col">
+					<p class="smallText center" id="hour3">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center">66°</p>
+					<p class="precip center">&#128167 66°</p>
 				</div>
-				<div id="box1">
-					<p class="smallText" id="hour1">1pm</p>
+				<div class="col">
+					<p class="smallText center" id="hour4">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center">66°</p>
+					<p class="precip center">&#128167 66°</p>
 				</div>
-				<div id="box1">
-					<p class="smallText" id="hour1">1pm</p>
+				<div class="col">
+					<p class="smallText center" id="hour5">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center">66°</p>
+					<p class="precip center">&#128167 66°</p>
 				</div>
 				
 
@@ -74,6 +97,6 @@
 			
 		</section>
 		
-		<script type="text/javascript" src="main3.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
