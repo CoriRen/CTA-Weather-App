@@ -19,15 +19,22 @@ class WeatherFetcher {
       .then(res => res.json())
       .then(data => {
         console.log(data)
+
         const shortForecast = data.properties.periods[0].shortForecast.toLowerCase();
+
         document.querySelector('.currentTemp').innerText = data.properties.periods[0].temperature;
+
         document.querySelector('.shortForecast').innerText = shortForecast
+        
         if (shortForecast === 'sunny' || shortForecast === 'mostly sunny'){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/sunny.png')"
+
         }else if (String(shortForecast).includes('showers') ){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/rain-clouds.png')"
+
         }else if (String(shortForecast).includes('snow') ){
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/snowfall.gif')"
+
         }else {
           document.querySelector('.weatherIcon').style.backgroundImage = "url('assets/Clouds.png')"
         }
@@ -42,10 +49,20 @@ class WeatherFetcher {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        document.querySelector('.detailedForecast').innerText = data.properties.periods[0].detailedForecast;
+
+        //document.querySelector('.detailedForecast').innerText = data.properties.periods[0].detailedForecast;
+
         const chanceOfRain = data.properties.periods[0].probabilityOfPrecipitation.value ?? 0;
+        
+        const highTemp = data.properties.periods[0].temperature;
+
         document.querySelector('#chanceOfRain').innerText = chanceOfRain;
-        document.querySelector('#highTemp').innerText=data.properties.periods[0].temperature;
+
+        document.querySelector('#highTemp').innerText= highTemp;
+
+        document.querySelector('#hour1').innerText= highTemp;
+
+
       })
       .catch(err => {
         console.log(`error ${err}`);
