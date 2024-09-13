@@ -16,18 +16,21 @@
 	<body>
 		<div class="weatherBackground innerContainer">
 			<section>
-				<div class="gridBox">
+				<div class="mainGridBox">
 					<h1><span class="currentTemp">80</span>°</h1> 
 					<p class="shortForecast">Partly Cloudy</p>
 					<div class="highRainBox">
-						<p class="rightBorder smallText" id="high">
+						<p class="rightBorder smallText">
 							High<br>
 							<span class="thin">
 								<span id="highTemp">80</span>°
+								</span>
 							</p>
 						<p class="leftBorder smallText">Rain<br>
-							<span class="thin" id="chanceOfRain">40</span>
-							<span class="thin">%</span></p>
+							<span class ='thin'>
+								<span id="chanceOfRain">40</span>%
+							</span>
+						</p>
 					</div>
 					<div class="weatherIcon"></div>
 				</div>
@@ -36,15 +39,57 @@
 		</div>
 		<section class="innerContainer">
 			<div class="textContent">
-				<h2 class="city">Chicago</h2>
-				<div class="border"></div>
 				<h3 class="dateTime" id="currentDate">Thursday, September 5</h3>
 				<h4 class="dateTime thin" id="currentTime">4:00pm</h4>
 				<!--<p class="detailedForecast">Here is the long version of the daily forecast Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>-->
 			</div>
+			<div class="hourlyForecastGrid">
+				<div class="col">
+					<p class="smallText center" id="futureTime1">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center" id="futureTemp1">66°</p>
+					<p class="precip center">&#128167<span id="futureRain1">10</span>%</p>
+				</div>
+				<div class="col">
+					<p class="smallText center" id="futureTime2">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center" id="futureTemp2">66°</p>
+					<p class="precip center">&#128167<span id="futureRain2">10</span>%</p>
+				</div>
+				<div class="col">
+					<p class="smallText center" id="futureTime3">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center" id="futureTemp3">66°</p>
+					<p class="precip center">&#128167<span id="futureRain3">10</span>%</p>
+				</div>
+				<div class="col">
+					<p class="smallText center" id="futureTime4">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center" id="futureTemp4">66°</p>
+					<p class="precip center">&#128167<span id="futureRain4">10</span>%</p>
+				</div>
+				<div class="col">
+					<p class="smallText center" id="futureTime5">1pm</p>
+					<div class="smallIconContainer">
+						<img class="smallIcon"src="assets/sunny.png" alt="">
+					</div>
+					<p class="hourlyTemp center" id="futureTemp5">66°</p>
+					<p class="precip center">&#128167<span id="futureRain5">10</span>%</p>
+				</div>
+				
+
+			</div>
 		</section>
 		<section class="innerContainer">
-			<div class="textContent boxShadow">
+			<div class="textContent orange">
 				<p class="bold">Top Story</p>
 				<p class="thin news" id="news"><a id="newsLink" href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></p>
 				<a class="button" href="#">Refresh Page</a>
